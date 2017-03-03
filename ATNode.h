@@ -4,15 +4,16 @@
 
 /** A node for an anagram Tree. */
 struct ATNode {    // Data Fields
-    std::string letter;
+    char letter;
     std::string remaining_letters;
     int num_children;
     //stores child nodes
     ATNode *children;
 	// Constructor
+    ATNode() {}
     ATNode(const std::string the_data, int letter_pos) :
             remaining_letters(the_data), num_children(the_data.size()), children(new ATNode[the_data.size()]),
-            letter(the_data.at(letter_pos)) {}
+            letter(the_data[letter_pos]) {}
 	// Destructor (to avoid warning message)
     virtual ~ATNode() {}
 	// to_string
